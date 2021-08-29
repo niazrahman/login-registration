@@ -1,0 +1,19 @@
+{
+    "source": {
+        "include": ["controllers"],
+        "includePattern": ".js$",
+        "excludePattern": "(node_modules/|docs)"
+    },
+    "sourceType": "module",
+    "plugins": ["plugins/markdown"],
+    "markdown": { "markdown.hardwrap": "true" },
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": true
+    },
+    "opts": {
+        "recurse": true,
+        "destination": "./docs/",
+        "template": "custom-template"
+    }
+}

@@ -1,0 +1,121 @@
+<%- include('../../partials/head.ejs') %>
+<%-include('../../partials/navigation.ejs') %>
+    <div class="container my-container">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <div class="card card-body ">
+                    <h4>Register Your Account</h4>
+                    <form action="/auth/signup" method="POST">
+
+                        <div class="form-group ">
+                            <label for="name">Full Name</label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name" 
+                                class="form-control <%=error.name ? 'is-invalid' : '' %>" value="<%=value.name ? value.name : '' %>">
+                            <div class="invalid-feedback">
+                                <%= error.name && error.name %>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="phone">Mobile Number</label>
+                            <input 
+                                type="text" 
+                                name="phone" 
+                                id="phone" 
+                                class="form-control <%=error.phone ? 'is-invalid' : '' %>" value="<%=value.phone ? value.phone : '' %>">
+                            <div class="invalid-feedback">
+                                <%= error.phone && error.phone %>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input 
+                                type="text" 
+                                name="address" 
+                                id="address" 
+                                class="form-control <%=error.address ? 'is-invalid' : '' %>" 
+                                value="<%=value.address ? value.address : '' %>">
+                            <div class="invalid-feedback">
+                                <%= error.address && error.address %>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="nid">NID Number</label>
+                            <input 
+                                type="text" 
+                                name="nid" 
+                                id="nid" 
+                                class="form-control <%=error.nid ? 'is-invalid' : '' %>" value="<%=value.nid ? value.nid : '' %>">
+                            <div class="invalid-feedback">
+                                <%= error.nid && error.nid %>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select 
+                            name="role" 
+                            class="form-control <%=error.role ? 'is-invalid' : '' %>" id="role">
+                                <option selected>Select One...</option>
+                                <option value="farmer">Farmer</option>
+                                <option value="buyer">Buyer</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                <%= error.role && error.role %>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                id="email" 
+                                class="form-control <%=error.email ? 'is-invalid' : '' %>" value="<%=value.email ? value.email : '' %>">
+                            <div class="invalid-feedback">
+                                <%= error.email && error.email %>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input 
+                            type="password" 
+                            name="password" 
+                            id="password" 
+                            class="form-control <%=error.password ? 'is-invalid' : '' %>" value="<%=value.password ? value.password : '' %>">
+                            <div class="invalid-feedback">
+                                <%= error.password && error.password %>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input 
+                                type="password" 
+                                name="confirmPassword" 
+                                id="confirmPassword" class="form-control <%=error.confirmPassword ? 'is-invalid' : '' %>">
+                            <div class="invalid-feedback">
+                                <%= error.confirmPassword && error.confirmPassword %>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="mb-3">
+                            <input type="submit" value="signup" class="form-control bg-dark text-white">
+                        </div>
+    
+                    </form>
+                    <p>Registered Already? <a href="/auth/login">login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('../../partials/footer.ejs') %>
+</body>
+</html>

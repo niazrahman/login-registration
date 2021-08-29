@@ -1,0 +1,56 @@
+<%- include('../../partials/head.ejs') %>
+<%-include('../../partials/navigation.ejs') %>
+
+    <section>
+        <div class="container my-container">
+            <div class="row z">
+                <div class="col-md-6">
+                    <img class="login_img" src="/images/farm.svg" alt="">
+                    <h2>Welcome Back</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, autem.</p>
+                </div>
+                <div class="col-md-6 login_section">
+                    <h3 class="text-center mb-4">Krisok Bangla</h3>
+                    <form action="/auth/login" method="POST">
+                        <div class="form-group mb-3">
+                            <label for="email">Email</label>
+                            <input 
+                                type="email" 
+                                name="email" 
+                                id="email" 
+                                class="form-control <%= error.email ? 'is-invalid' : '' %>">
+                                <div class="invalid-feedback">
+                                    <%= error.email && error.email %>
+                                </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="password">Password</label>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password" 
+                                class="form-control <%= error.password ? 'is-invalid' : '' %>">
+                                <div class="invalid-feedback">
+                                    <%= error.password && error.password %>
+                                </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                       
+                        <div class="mb-3">
+                            <input type="submit" value="Login" class="form-control bg-dark text-white">
+                        </div>
+                    </form>
+                
+                      <p>Don't have account? <a href="/auth/signup">Create one</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../../partials/footer.ejs') %>
+</body>
+</html>
